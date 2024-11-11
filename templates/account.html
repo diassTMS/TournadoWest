@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block container %}
-    <div class='container' id='box'>
+    <div class='container' id='leagueBox'>
         <div class="header">
             <img id="img" src="{{ user.profile.image.url }}">
             <h2>Your Account<span style="float:right; margin-right:20px; cursor:pointer;"><i onclick="location.href = '{% url 'logout' %}';" class="fa-solid fa-arrow-right-from-bracket" id="icon"></i></span></h2>
         </div>
         <br>
-        <div class="grid" id="tournGrid">
+        <div class="grid" id="tournPage">
             <article id="card">
                 <h4>Profile</h4>
                 <hr>
@@ -25,6 +25,7 @@
                 </div>
             </article>
             {% if user.groups.all.0.name == 'Admin' %}
+                <!--
                 <article id="card">
                     <h4>Tournaments</h4>
                     <hr>
@@ -40,6 +41,7 @@
                         <button class="outline" onclick="location.href = '{% url 'tourn-create' %}';">New <i class="fa-solid fa-plus"></i></button>
                     </div>
                 </article>
+                -->
                 <article id="card">
                     <h4>Leagues</h4>
                     <hr>
