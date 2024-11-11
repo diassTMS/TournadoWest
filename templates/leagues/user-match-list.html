@@ -98,12 +98,7 @@
             </table>
         </div>
         <hr>
-        <div class="grid">
-            {% if allData %}
-                <button data-target="modal-publish" onclick="toggleModal(event)">Publish League Matches</button>   
-            {% endif %}
-            <button class="secondary" onclick="location.href='{% url 'league-live-score' return %}';">View Live Score Table</button>   
-        </div>
+        <button class="secondary" onclick="location.href='{% url 'league-live-score' return %}';">View Live Score Table</button>   
     </div>
     <!-- Tourn Delete Modal -->
     <dialog id="modal-publish">
