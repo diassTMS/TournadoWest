@@ -33,7 +33,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tournaments'] = Tournament.objects.filter(date__gte=datetime.date.today()).order_by('date')[:3]
-        context['leagues'] = League.objects.filter(endDate__gte=datetime.date.today(), startDate__lte=datetime.date.today())[:2]
+        context['leagues'] = League.objects.filter(endDate__gte=datetime.date.today(), startDate__lte=datetime.date.today())[:6]
         return context
     
 class UserCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
