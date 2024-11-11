@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_tables2 %}
+{% block container %}
+    <div id="box">
+        <hgroup>
+            <h2>
+                {% if user == userInput %}
+                    <i onClick="location.href='{% url 'account' %}';" class="fa-solid fa-circle-arrow-left" id="icon"></i>
+                    {{ user }}'s Orders
+                {% else %}
+                    <i onClick="location.href='{% url 'user-list' %}';" class="fa-solid fa-circle-arrow-left" id="icon"></i>
+                    {{ userInput }}'s Orders
+                {% endif %}
+                <span style="float:right; margin-right:20px; cursor:pointer;">
+                    <i style="color: green;" onclick="location.href='{% url 'order-create' userInput.id %}';" class="fa-solid fa-plus"></i>
+                </span>
+            </h2>
+        </hgroup>
+        <hr>
+        <article>
+            <div class="overflow-auto">
+                {% include 'orders/include/order_table.html' %}
+            </div>
+        </article>
+    </div>
+{% endblock %}
